@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+   *, *::after, *::before{
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+    } 
+    :root {
+  
+      --color: black;
+    }
+    h2 {
+      text-align: center;
+    }
+    .rectangle-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction:column;
+    }
+    #rectangle {
+    
+      --height: 0;
+      --width: 0;
+      width: calc(var(--width) * 1vw);
+      height: calc(var(--height) * 1vh);
+    }
+
+    /* game part */
+    .wrapper-game {
+      display: flex;
+      position: relative;
+      border: 1px solid black;
+    }
+    .left {
+      border-right: 1px solid black;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      
+    }
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .human-score {
+      position: absolute;
+      font-size: 30px;
+      right: 0;
+      top: 0;
+      margin: 0 10px;
+    }
+    .computer-score {
+      position: absolute;
+      font-size: 30px;
+      left: 0;
+      top: 0;
+      margin: 0 10px;
+    }
+    .display-win {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      box-sizing: border-box;
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+     color: "pink"!important;
+    }
+
+    /* 2nd game */
+
+    .board {
+
+      margin: auto;
+
+      width: 90vw;
+      height: 45vh;
+      border: 1px solid black;
+    }
+
+    .paddle {
+      width: 5vh;
+      height: 5vh;
+      border: 1px solid black;
+      background-color: red;
+      border-radius:50%;
+    }
+  
+
+  </style>
+</head>
+<body>
+
+  <h2>Training classes</h2>
+
+  <hr/>
+
+  <div class="rectangle-wrapper">
+  <h4>Simple rectangles</h4>
+  <form id="form" action="/" method="GET">
+  <label for="width">Width</label>
+  <input id="width" name="width" type="number">
+  <label for="height">Height</label>
+  <input id="height" name="height" type="number">
+  <button type="submit">Submit</button>
+  </form>
+  <br/>
+  <div id="rectangle"></div>
+  </div>
+
+  <hr/>
+
+  <h4><center>Rock, papper, scissors</center></h4>
+  <div class="wrapper-game">
+    <div class="display-win"></div>
+    <div class="left">
+      <div class="human-score">0</div>
+    <p class="rock" >Rock</p>
+    <p class="papper" >Papper</p>
+    <p class="scissors">Scissors</p>
+    </div>
+
+    <div class="right">
+      <div class="computer-score">0</div>
+    <p class="computer">computer :</p>
+    </div>
+  </div>
+
+  <br/>
+
+  <div class="board">
+    <div class="paddle">
+
+    </div>
+
+  </div>
+
+
+
+  <script src="index.js" type="module"></script>
+</body>
+</html>
